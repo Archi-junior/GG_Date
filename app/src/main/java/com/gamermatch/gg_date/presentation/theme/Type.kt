@@ -1,4 +1,4 @@
-package com.gamermatch.gg_date.ui.theme
+package com.gamermatch.gg_date.presentation.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

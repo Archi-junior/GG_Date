@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.gamermatch.gg_date"
-    compileSdk = 35
+    compileSdk = 36
 
     defaultConfig {
         applicationId = "com.gamermatch.gg_date"
@@ -40,7 +40,8 @@ android {
 }
 
 dependencies {
-
+    implementation(libs.androidx.room.ktx)
+    implementation(libs.retrofit)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
