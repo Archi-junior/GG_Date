@@ -5,8 +5,9 @@ import com.gamermatch.gg_date.domain.entity.User
 import com.gamermatch.gg_date.domain.repository.AuthRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
+import javax.inject.Inject
 
-class RegisterUserUseCase (private val repository: AuthRepository) {
+class RegisterUserUseCase @Inject constructor(private val repository: AuthRepository) {
     suspend operator fun invoke (user: User): Flow<RegistrationResult> {
         return when {
             !isValidEmail(user.email) -> flowOf(RegistrationResult.Error("Некорректный email"))

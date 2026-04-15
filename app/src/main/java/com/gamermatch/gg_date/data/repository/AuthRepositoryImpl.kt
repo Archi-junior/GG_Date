@@ -29,7 +29,7 @@ class AuthRepositoryImpl(
             val response = api.register(request)
             if (response.isSuccess) {
                 saveUserData(response)
-                emit(RegistrationResult.Succes)
+                emit(RegistrationResult.Success)
             } else {
                 emit(RegistrationResult.Error(response.message ?: "Ошибка регистрации"))
             }

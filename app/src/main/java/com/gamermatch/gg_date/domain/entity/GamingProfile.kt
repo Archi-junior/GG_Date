@@ -1,14 +1,26 @@
 package com.gamermatch.gg_date.domain.entity
 
 data class GamingProfile(
-    val primaryPlatform: List<GamingPlatform>,
+    val primaryPlatforms: List<GamingPlatform>,
     val favoriteGenres: List<Genre>,
     val favoriteGames: List<Game>,
-    val playStyle: PlayStyle,
-    val skillLevel: Map<String,SkillLevel>,
-    val lookingFor: List<LookingFor>,
-    val voiceChatPreference: VoiceChatPreference
-)
+    val playStyle: PlayStyle?,
+    val skillLevel: Map<String,SkillLevel>?,
+    val lookingFor: List<LookingFor>?,
+    val voiceChatPreference: VoiceChatPreference?
+){
+    companion object {
+        val EMPTY = GamingProfile(
+            primaryPlatforms = emptyList(),
+            favoriteGenres = emptyList(),
+            favoriteGames = emptyList(),
+            playStyle = null,
+            skillLevel = null,
+            lookingFor = null,
+            voiceChatPreference = null,
+        )
+    }
+}
 
 enum class GamingPlatform{
     PC, XBOX, PLAYSTATION, NINTENDO_SWITCH, MOBILE

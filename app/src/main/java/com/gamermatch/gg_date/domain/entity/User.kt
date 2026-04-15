@@ -12,7 +12,7 @@ data class User(
     val avatarUrl: String?,
     val bio: String,
     val birthDate: LocalDate,
-    val location: Location,
+    val location: Location?,
     val gamingProfile: GamingProfile,
     val preferences: UserPreferences,
     val accountStatus: AccountStatus,
@@ -26,7 +26,7 @@ enum class AccountStatus {
 }
 
 sealed class RegistrationResult{
-    object Succes : RegistrationResult()
+    object Success : RegistrationResult()
     data class Error(val message: String) : RegistrationResult()
     object Loading : RegistrationResult()
 }
